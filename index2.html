@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="./bootstrap-4/css/bootstrap.min.css" />
+
+    <script src="./tinymce/tinymce.min.js"></script>
+    <script src="./bootstrap-4/js/jquery.min.js"></script>
+    <script src="./bootstrap-4/js/popper.js"></script>
+    <script src="./bootstrap-4/js/bootstrap.bundle.min.js"></script>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" class="container main"></div>
+    <button class="diarybutton">click me</button>
+    
+      <div>
+        <ul class="nav nav-tabs" id="journalTab" role="tablist">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              id="write-tab"
+              data-toggle="tab"
+              href="#write"
+              role="tab"
+              aria-controls="write"
+              aria-selected="true"
+            >
+              write
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="offlineRead-tab"
+              data-toggle="tab"
+              href="#offlineRead"
+              role="tab"
+              aria-controls="offlineRead"
+              aria-selected="false"
+            >
+              offline Records
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="onlineRead-tab"
+              data-toggle="tab"
+              href="#onlineRead"
+              role="tab"
+              aria-controls="onlineRead"
+              aria-selected="false"
+            >
+              online Records
+            </a>
+          </li>
+        </ul>
+        <div class="tab-content" id="journalContent">
+          <div
+            class="tab-pane fade show active"
+            id="write"
+            role="tabpanel"
+            aria-labelledby="write-tab"
+          >
+            this is the write area only
+          </div>
+          <div
+            class="tab-pane fade "
+            id="offlineRead"
+            role="tabpanel"
+            aria-labelledby="offlineRead-tab"
+          >
+            {" "}
+            this is the offline reader
+          </div>
+          <div
+            class="tab-pane fade"
+            id="onlineRead"
+            role="tabpanel"
+            aria-labelledby="onlineRead-tab"
+          >
+            this is the online reader
+          </div>
+        </div>
+      </div>
+
+      <form class="needs-validation" novalidate>
+      	<div class="form-row">
+      		<div class="col-md-4 mb-3">
+      			<label for="me">me</label>
+      			<input type="text" name="mark" placeholder="name" class="form-control" id="me" required="required">
+      			<div class="valid-feedback">
+      				looks good
+      			</div>
+      		</div>
+          <select id="cars">
+        <option value="volvo">volvo</option>
+        <option value="mercedes">mercedes</option>
+      </select>
+      
+           
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="checkbox" id="checkbox" required="required">
+              <label for="checkbox">checkbox</label>
+            </div>
+            
+         
+
+      		<div class="col-md-4 mb-3">
+      			<label for="me">me</label>
+      			<input type="text" name="file" placeholder="name" class="form-control" id="me" required="required">
+      			<div class="invalid-feedback">
+      				please choose a surname
+      			</div>
+      		</div>
+      		<button type="submit" class="btn btn-primary">save</button>
+      	</div>
+
+      	
+      </form>
+
+
+    
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+    <div>
+      <button class=" btn btn-warning" id="butt">
+        i am a button
+      </button>
+      <button class="" id="tool">
+        i am a tooltip
+      </button>
+    </div>
+    <span class="spinner-border text-primary"></span>
+
+    <script>
+      const button = document.querySelector("#butt");
+      const tooltip = document.querySelector("#tool");
+      console.log(button, tooltip);
+      Popper.createPopper(button, tooltip, {
+        placement: "top"
+      });
+    </script>
+  </body>
+</html>
